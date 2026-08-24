@@ -1,0 +1,1 @@
+const CACHE='rayyoka-v3-1';self.addEventListener('install',e=>e.waitUntil(caches.open(CACHE).then(c=>c.addAll(['./','./v3.html','./v3.css','./app-v3.js']))));self.addEventListener('fetch',e=>e.respondWith(caches.match(e.request).then(r=>r||fetch(e.request).catch(()=>caches.match('./v3.html')))));
